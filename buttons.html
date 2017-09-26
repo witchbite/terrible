@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<style>
+			body {
+				text-align: center;
+				background-color: #666669;
+			}
+			.btn {
+				padding: 20px 30px 20px 30px;
+				margin: 12px;
+				border-radius: 7px;
+				background-color: #e8873e;
+				border: none;
+				font-family: Helvetica;
+				font-weight: bold;
+				font-size: 20px;
+				color: #efd17f;
+				outline: none;
+				text-shadow: 0px 1px black, 1px 0px black, 0px -1px black, -1px 0px black;
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+				letter-spacing: 1px;
+			}
+			.btn:hover {
+				box-shadow: 0 0px 8px 0 rgba(255, 255, 255, 0.2), 0 0px 20px 0 rgba(239, 209, 127, 0.69);
+			}
+			.btn:active {
+				box-shadow: none;
+				transform: translateY(4px);
+			}
+			.blue {
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<script language="javascript">
+			window.onload = function(e){
+				const lines = "What can I say except you're welcome For the tides, the sun, the sky Hey, it's okay, it's okay You're welcome I'm just an ordinary demi-guy Hey! What has two thumbs that pulled up the sky When you were waddling yay high This guy! When the nights got cold Who stole you fire from down below You're lookin' at him, yo Oh, also I lassoed the sun You're welcome! To stretch the days and bring you fun Also I harnessed the breeze You're welcome! To fill your sails and shake your trees So what can I say except you're welcome For the islands I pulled from the sea There's no need to pray, it's okay You're welcome! Ha, I guess it's just my way of being me You're welcome! You're welcome!";
+				var text = lines.split(" ");
+				
+				for( var i = 0; i < text.length; i++ )
+				{
+					var btn = document.createElement("button");
+					btn.value = text[i];
+					var textEl = document.createTextNode(text[i]);
+					btn.appendChild(textEl);
+					btn.className = "btn";
+					if( text[i].toLowerCase().toLowerCase().indexOf("welcome") > -1 || (text[i].toLowerCase() === "you're" && text[i+1].toLowerCase().indexOf("welcome") > -1 ) )
+					{
+						btn.className += " blue"
+					}
+					document.body.appendChild(btn);
+				}
+			};
+		</script>
+	</body>
+</html>
